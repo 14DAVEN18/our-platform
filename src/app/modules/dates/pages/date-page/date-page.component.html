@@ -1,3 +1,18 @@
-<div class="navbar" *ngIf="isFeatureEnabled">
-    <navbar></navbar>
+<div class="date_container">
+    <div class="button_line">
+        <button type="button" class="form_control button create_button" (click)="createActivity()">Create activity</button>
+        <button
+            *ngIf="isCreationActive"
+            type="button"
+            class="form_control button cancel_button"
+            (click)="cancelActivityCreation()"
+        >
+            Cancel creation
+        </button>
+    </div>
+    <div class="button_line" *ngIf="isCreationActive">
+        <input type="text" class="form_control text_input" placeholder="Type the activity"/>
+        <button type="button" class="form_control button create_button" (click)="addInPersonAvtivity()">Add to in-person</button>
+        <button type="button" class="form_control button cancel_button" (click)="addVirtualActivity()">Add to virtual</button>
+    </div>
 </div>

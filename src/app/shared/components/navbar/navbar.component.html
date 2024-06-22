@@ -1,7 +1,9 @@
 <div class="container_navbar">
     <div class="navbar_list">
         <ul class="list_menu">
-            <li *ngFor="let item of listItems" class="navbar_item">{{item}}</li>
+            <li *ngFor="let item of listItems" class="navbar_item">
+                <div (click)="navigateTo(item.path)" class="navbar_text" [ngClass]="{'navbar_text_selected': currentTab === item.path}">{{item.label}}</div>
+            </li>
         </ul>
     </div>
 </div>
