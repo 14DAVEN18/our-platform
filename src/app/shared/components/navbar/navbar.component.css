@@ -14,24 +14,32 @@
     display: flex;
     flex-direction: row;
     height: 100%;
+    padding: 0;
     width: 100%;
 }
 
 .navbar_item {
-    align-items: center;    
-    color: white;
-    cursor: pointer;
+    border-right: 1px solid rgb(200, 200, 200);
     display: flex;
     height: 80%;
-    margin: 0 0.5em;
     padding: 0 0.5em;
     width: auto;
 }
 
-.navbar_item:hover {
+.navbar_text {
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    padding: 0 1em;
+    text-align: center;
+}
+
+.navbar_text:hover {
     background-color: rgb(21, 0, 255);
 }
 
-.navbar_item_selected {
+.navbar_text_selected {
     background-color: rgb(0, 170, 255);
 }

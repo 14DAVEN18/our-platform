@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
+import { DatesRoutingModule } from './dates-routing.module';
+import { DatePageComponent } from './pages/date-page/date-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [],
+  declarations: [DatePageComponent],
   imports: [
     CommonModule,
-    NavbarComponent
+    DatesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class DatesModule { }
