@@ -1,17 +1,30 @@
 /* Styles for the container of the component */
 .date_container {
+    box-sizing: border-box;
     height: 100%;
-    padding: 1% 1% 0 1%;
-    width: 98%;
+    padding: 1% 1% 1% 1%;
+    width: 100%;
 }
 
-/* Stylkes for the line of buttons at the top */
+/* Styles for the form container */
+.form_container {
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    height: 25%;
+    padding-bottom: 0.5%;
+    margin-bottom: 1%;
+    width: 100%;
+}
+
+/* Styles for the line of buttons at the top */
 .button_line {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    height: auto;
-    gap: 1em;
-    margin-bottom: 1%;
+    min-height: 50px;
+    height: 15%;
+    gap: 1.5%;
+    margin-bottom: 0%;
     width: 100%;    
 }
 
@@ -25,7 +38,7 @@
 .button {
     cursor: pointer;
     min-width: 10em;
-    padding: 0 0.5em;
+    padding: 0 1%;
     width: auto;
 }
 
@@ -57,4 +70,102 @@
 .text_input {
     padding-left: 0.5em;
     width: 20.5em;
+}
+
+.text_area {
+    padding-left: 0.5em;
+    width: 100%;
+    resize: none;
+}
+
+/* Styles for the container of the activities lists */
+.lists_container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    height: 72.5%;
+}
+
+/* Style for the category box */
+.category {
+    box-sizing: border-box;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid rgb(21, 0, 255);
+    height: 100%;
+    line-height: 2em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 50%;
+}
+
+/* Styles for the title of the category */
+.category h1 {    
+    background-color: rgba(0, 255, 0, 0.3);
+    border-bottom: 4px solid black;
+    height: 5%;
+    padding: 0 2%;
+    text-transform: uppercase;    
+    text-align: center;
+}
+
+/* Style the scrollbar */
+.category::-webkit-scrollbar {
+    width: 6px; /* Width of the vertical scrollbar */
+}
+
+/* Style the scrollbar handle (thumb) */
+.category::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 100, 255); /* Color of the scrollbar handle */
+}
+
+/* Style the scrollbar track */
+.category::-webkit-scrollbar-track {
+    background: rgb(0, 200, 255); /* Color of the scrollbar track */    
+}
+
+/* Styles for the list of activities */
+.activity_list {
+    display: flex;
+    flex-direction: column;
+    height: 94%;
+}
+
+/* Styles for each list displayed in the panel */
+.activity {
+    border-bottom: 1px solid black;
+    height: auto;
+    width: 100%;
+}
+
+/* Styles for each item of the activity that contains the title of the activity */
+.activity li {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    height: 2em;
+    padding: 0 2%;
+    transition: background-color 0.5s ease;
+}
+.activity li:hover {
+    background-color: rgb(200, 200, 200);
+}
+/* Styles for the toggled title of each activity */
+.selected_activity {
+    color: white;
+    background-color: rgb(255, 40, 0);
+}
+
+/* Styles for each item of the activity that contains the description of the activity */
+.activity_description {
+    background-color: rgb(255, 40, 0, 0.1);
+    border-bottom: 1px solid black;
+    padding: 0 3% 0 3%;
+    height: 0; /* Start with height as 0 */
+    overflow: hidden;
+    transition: text-wrap 1s ease;
+}
+
+.visible_active {
+    text-wrap: wrap; /* Show description by setting height to auto */
+    height: auto;
 }

@@ -1,18 +1,58 @@
 <div class="date_container">
-    <div class="button_line">
-        <button type="button" class="form_control button create_button" (click)="createActivity()">Create activity</button>
-        <button
-            *ngIf="isCreationActive"
-            type="button"
-            class="form_control button cancel_button"
-            (click)="cancelActivityCreation()"
-        >
-            Cancel creation
-        </button>
+    <div class="form_container">
+        <div class="button_line">
+            <button type="button" class="form_control button create_button" (click)="createActivity()">Create activity</button>
+            <button
+                *ngIf="isCreationActive"
+                type="button"
+                class="form_control button cancel_button"
+                (click)="cancelActivityCreation()"
+            >
+                Cancel creation
+            </button>
+        </div>
+        <div *ngIf="isCreationActive">
+            <div class="button_line">
+                <input type="text" class="form_control text_input" placeholder="Type the activity" [(formControl)]="activityTitle"/>
+            </div>
+            <div class="button_line">
+                <textarea placeholder="Type the description of the activity" class="form_control text_area" [(formControl)]="activityDescription"></textarea>
+            </div>
+            <div class="button_line">
+                <button type="button" class="form_control button create_button" (click)="addInPersonAvtivity()">Add to in-person</button>
+                <button type="button" class="form_control button cancel_button" (click)="addVirtualActivity()">Add to virtual</button>
+            </div>
+        </div>
     </div>
-    <div class="button_line" *ngIf="isCreationActive">
-        <input type="text" class="form_control text_input" placeholder="Type the activity"/>
-        <button type="button" class="form_control button create_button" (click)="addInPersonAvtivity()">Add to in-person</button>
-        <button type="button" class="form_control button cancel_button" (click)="addVirtualActivity()">Add to virtual</button>
-    </div>
+    
+    <div class="lists_container">
+        <div class="category">
+            <h1>In-person activities</h1>
+            <ul class="activity_list">
+                <div class="activity" *ngFor="let activity of inPersonActivities">
+                    <li [ngClass]="{'selected_activity': !activity.collapsed}" (click)="toggleDescription(activity)">
+                        {{activity.title}} {{activity.id}}
+                    </li>
+                    <div class="activity_description" [ngClass]="{'visible_active': !activity.collapsed}">
+                        {{activity.description}}
+                    </div>
+                </div>
+            </ul>
+        </div> 
+        <div class="category">
+            <ul class="activity_list">
+                <h1>Virtual activities</h1>
+                <ul class="activity_list">
+                    <div class="activity" *ngFor="let activity of virtualActivities">
+                        <li [ngClass]="{'selected_activity': !activity.collapsed}" (click)="toggleDescription(activity)">
+                            {{activity.title}} {{activity.id}}
+                        </li>
+                        <div class="activity_description" [ngClass]="{'visible_active': !activity.collapsed}">
+                            {{activity.description}}
+                        </div>
+                    </div>
+                </ul>
+            </ul>
+        </div> 
+    </div> 
 </div>
