@@ -1,9 +1,17 @@
+.main_container {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
 .navbar {
+    box-sizing: border-box;
     height: 8%;
     width: 100%
 }
 
 .content {
-    height: 90%;
+    box-sizing: border-box;
+    height: 92%;
     width: 100%;
 }
